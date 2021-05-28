@@ -1,0 +1,200 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Movie Buster</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+<nav class="navbar" id="mainNav">
+	<ul class="container">
+	  <li><a href="#home">Home</a></li>
+	  <li><a href="pages/trending.html">Trending This Week</a></li>
+	  <li class="dropdown">
+		<a href="javascript:void(0)" class="dropbtn">My collections</a>
+		<div class="dropdown-content">
+		  <a href="pages/watchlist.html">Watched Movies</a>
+		</div>
+	  </li>
+	</ul>
+</nav>
+
+
+<section class="top">
+	<div class="container">
+		<h1>Movie Buster</h1>
+		<form class="top-search" method="post" action='http://localhost:4000/post' target="iframe" onsubmit="return validateSearch()" >
+			<input type="text" id="searchString"  name="searchString" placeholder = "Look up your favorite movie">
+			<button type="submit" id="searchBtn" onclick="showIframe()" >Search</button>
+		</form>
+		<iframe height="200" width="500" name="iframe" id = "iframe" style="display:none;"></iframe>
+		<div id="validateContainer">
+		
+		</div>
+
+		<div class="carousel-container">
+			<div class="carousel-page" id="0">
+				<div class="movie highlight" style="background:url(images/movie1.jpg);">
+					<div class="info">
+						<p><span class="blue">Sci-Fi</span></p>
+						<br>
+						<p><span class="movie-name">Oblivion</span></p>
+						<p><span class="star">&#9733; </span><span class="rating"> 9.5 / 10 </span></p>
+					</div>
+				</div>
+				<div class="movie" style="background:url(images/movie2.jpg);">
+					<div class="info">
+						<p><span class="blue">Sci-Fi</span></p>
+						<br>
+						<p><span class="movie-name">2049</span></p>
+						<p><span class="star">&#9733; </span><span class="rating"> 9.5 / 10 </span></p>
+					</div>
+				</div>
+				<div class="movie" style="background:url(images/movie3.jpg);">
+					<div class="info">
+						<p><span class="blue">Sci-Fi</span></p>
+						<br>
+						<p><span class="movie-name">Mulholland Drive</span></p>
+						<p><span class="star">&#9733; </span><span class="rating"> 9.5 / 10 </span></p>
+					</div>
+				</div>
+				<div class="movie" style="background:url(images/movie4.jpg);">
+					<div class="info">
+						<p><span class="blue">Sci-Fi</span></p>
+						<br>
+						<p><span class="movie-name">The revenant</span></p>
+						<p><span class="star">&#9733; </span><span class="rating"> 9.5 / 10 </span></p>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-page" style="display:none;" id="1" >
+				<div class="movie highlight" style="background:url(images/movie5.jpg);">
+					<div class="info">
+						<p><span class="blue">Comedy</span></p>
+						<br>
+						<p><span class="movie-name">Ted2</span></p>
+						<p><span class="star">&#9733; </span><span class="rating"> 9.5 / 10 </span></p>
+					</div>
+				</div>
+				<div class="movie" style="background:url(images/movie6.jpg);">
+					<div class="info">
+						<p><span class="blue">Sci-Fi</span></p>
+						<br>
+						<p><span class="movie-name">Spider-Man</span></p>
+						<p><span class="star">&#9733; </span><span class="rating"> 9.5 / 10 </span></p>
+					</div>
+				</div>
+				<div class="movie" style="background:url(images/movie7.jpg);">
+					<div class="info">
+						<p><span class="blue">Sci-Fi</span></p>
+						<br>
+						<p><span class="movie-name">Army of the dead</span></p>
+						<p><span class="star">&#9733; </span><span class="rating"> 9.5 / 10 </span></p>
+					</div>
+				</div>
+				<div class="movie" style="background:url(images/movie4.jpg);">
+					<div class="info">
+						<p><span class="blue">Sci-Fi</span></p>
+						<br>
+						<p><span class="movie-name">The revenant</span></p>
+						<p><span class="star">&#9733; </span><span class="rating"> 9.5 / 10 </span></p>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-page" style="display:none;" id="2">
+				<div class="movie highlight" style="background:url(images/movie8.jpg);">
+					<div class="info">
+						<p><span class="blue">Sci-Fi</span></p>
+						<br>
+						<p><span class="movie-name">Tom & Jerry</span></p>
+						<p><span class="star">&#9733; </span><span class="rating"> 9.5 / 10 </span></p>
+					</div>
+				</div>
+				<div class="movie" style="background:url(images/movie2.jpg);">
+					<div class="info">
+						<p><span class="blue">Sci-Fi</span></p>
+						<br>
+						<p><span class="movie-name">2049</span></p>
+						<p><span class="star">&#9733; </span><span class="rating"> 9.5 / 10 </span></p>
+					</div>
+				</div>
+				<div class="movie" style="background:url(images/movie9.jpg);">
+					<div class="info">
+						<p><span class="blue">Sci-Fi</span></p>
+						<br>
+						<p><span class="movie-name">The Godfather</span></p>
+						<p><span class="star">&#9733; </span><span class="rating"> 9.5 / 10 </span></p>
+					</div>
+				</div>
+				<div class="movie" style="background:url(images/movie4.jpg);">
+					<div class="info">
+						<p><span class="blue">Sci-Fi</span></p>
+						<br>
+						<p><span class="movie-name">The revenant</span></p>
+						<p><span class="star">&#9733; </span><span class="rating"> 9.5 / 10 </span></p>
+					</div>
+				</div>
+			</div>
+
+			
+		</div>
+		<div class="carousel-paging" id="carousel-paging">
+			<span class="active">&#8226;</span> <span>&#8226;</span> <span>&#8226;</span> 
+		</div>
+		
+		<button class="carousel-btn" onclick="moveBack()"> &lt;&lt; </button>
+		<button class="carousel-btn" onclick="move()"> &gt;&gt; </button>
+	</div>
+</section>
+<section>
+	<div class="container">
+					<h1 id="rndColor" >Top 10 movies</h1>
+					<h2 id="datenow"></h2>
+					<span id="hidden" style="display:none;">You have hidden elements!</span>
+			<ul class="order">
+				<li class="tab-link" onclick="showtab('popular')" id="popular-tab">#POPULAR</li>
+				<li class="tab-link" onclick="showtab('comingsoon')" id="comingsoon-tab">#COMING SOON</li>
+				<li class="tab-link" onclick="showtab('toprated')" id="toprated-tab">#TOP RATED</li>
+			</ul>
+			<div class="tab" id="popular">
+
+			</div>
+			<div class="tab" id="comingsoon" style="display:none;">
+
+			</div>
+			<div class="tab" id="toprated" style="display:none;">
+
+			</div>
+	</div>
+</section>
+<section>
+	<div class="container">
+		<h1>'Army of the Dead' Viewers Question Dead Pixels on Screens</h1>
+		<p>If you happened to watch Zack Snyder’s “Army of the Dead” this weekend, you might have noticed something was not quite right. You weren’t alone — quite a few Twitter and Reddit users noticed that some scenes appear to have dead pixels, or completely white spaces, on various parts of the screen.</p>
+		<p>One user wrote, “Army Of The Dead really had me thinking my TV was messed up with 2 broken pixels and turns out it was in the movie.”</p>
+		<p>A graphics expert at a top visual effects company that did not work on “Army” said there were several reasons dead pixels could appear onscreen, though it would be “highly unlikely” they would have been missed in post-production. “If auto-processing was not available for the given camera settings or was turned off to keep the workflow as ‘analog’ as possible, it would likely preserve these dead pixels,” the expert said.</p>
+	</div>
+</section>
+<section>
+	<div class="container">
+		<h1>The Best Movies To Buy Or Stream This Week: ‘Raya And The Last Dragon,’ ‘Minari,’ ‘The Father’ & More</h1>
+		<p>Every Tuesday, discriminating viewers are confronted with a flurry of choices: new releases on disc and on-demand, vintage and original movies on any number of streaming platforms, catalog titles making a splash on Blu-ray or 4K. This biweekly column sifts through all of those choices to pluck out the movies most worth your time, no matter how you’re watching.</p>
+		<p>This week’s big, big new release roundup includes two high-profile winners at this year’s Oscars, the big winner at 1965’s Oscars, a handful of cult faves making their 4K debuts, a must-have box set for fans of low-budget genre fare, and catalog Blu-ray releases featuring such icons as Jackie Chan, Cary Grant, Marlon Brando, and Snoopy. Let’s do some browsing:</p>
+		<p>“Raya and the Last Dragon”: Disney’s latest animated feature is a lovely, luminous adventure story, comprised of familiar elements: a brave Princess (voiced by Kelly Marie Tran), a stern but loving father (Daniel Dae Kim), a formidable villain (Gemma Chan), and a wacky comic sidekick (Awkwafina). Some of those elements show their wear, and Awkwafina’s schtick veers between inspired and strained. But the story they’re telling is worthwhile, the mythology is detailed, and the craft is simply astonishing, bringing a variety of distinctive worlds and lush landscapes to vivid life. (Includes deleted scenes, outtakes, featurettes, and Easter eggs.) </p>
+	</div>
+</section>
+<div class="footer">
+  © Radu Mihai
+</div>
+<script src="js/main.js"></script> 
+<script src="js/home.js"></script> 
+<script>
+
+
+
+
+</script>
+</body>
+</html> 
